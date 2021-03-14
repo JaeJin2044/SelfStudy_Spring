@@ -1,0 +1,22 @@
+package org.zerock.sample;
+
+import org.springframework.stereotype.Component;
+
+import lombok.Data;
+
+@Component
+@Data
+public class Chef {
+
+	private int a;
+
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
+	}
+	
+	
+}

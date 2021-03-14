@@ -1,0 +1,24 @@
+INDEX VERSION 1.131+C:\Users\Owner\Desktop\SelfStudy_Spring\.metadata\.plugins\org.eclipse.jdt.core
+169891018.index
+3279863648.index
+468364553.index
+111976715.index
+66133609.index
+4082727679.index
+3898649951.index
+2151340981.index
+1981993564.index
+3154352866.index
+3788787532.index
+2487545169.index
+359387399.index
+1521067509.index
+876094454.index
+286418224.index
+1281891981.index
+500148385.index
+1373328814.index
+1008468484.index
+3141791041.index
+4128698456.index
+3138374109.index
