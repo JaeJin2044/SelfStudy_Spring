@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zerock.board.BoardMapper">
 
+	<!-- 리스트 -->
 	<select id="getList" resultType="org.zerock.board.domain.BoardVO">
 	<![CDATA[
 		select * from t_board 
@@ -11,12 +12,32 @@
 	]]>
 	</select>
 	
-	<insert id="insert">
+	<!-- 페이징 -->
+	<select id="getListWithPaging" resultType="org.zerock.board.domain.BoardVO">
+		<![CDATA[	
+			select bno,title,content,writer,regDate
+			from (
+				select /*+INDEX_DESC(t_board pk_board) */ 
+				rownum rn,title, bno,content,writer,regDate
+				from t_board
+				where rownum <= #{pageNum} * #{amount}
+			)
+			where rn > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	
+	
+	
+	
+	<!-- 글작성  -->
+	<insert id="write">
 		INSERT INTO T_BOARD
 		(bno,title,content,writer)
 		VALUES
 		(seq_board.nextval, #{title},#{content},#{writer})
 	</insert>
+	
 	
 	<insert id="insertSelectKey">
 		<selectKey  keyProperty="bno" order="BEFORE" resultType="long">
@@ -27,6 +48,30 @@
 		VALUES
 		(seq_board.nextval, #{title},#{content},#{writer})
 	</insert>
+	
+	<select id="selOne" resultType="org.zerock.board.domain.BoardVO">
+		SELECT * FROM t_board
+		where bno = #{bno}
+	</select>
+	
+	<delete id="delete">
+		delete from t_board
+		where bno = #{bno}
+	</delete>
+	
+	<update id="edit" parameterType="org.zerock.board.domain.BoardVO">
+		UPDATE t_board 
+		SET title = #{title},
+			content = #{content},
+			writer = #{writer}
+		WHERE bno = #{bno}
+	</update>
+	
+	<select id="totalCount" resultType="int">
+		select count(*) from t_board 
+		where bno > 0
+	</select>
+	
 
 
 </mapper>
