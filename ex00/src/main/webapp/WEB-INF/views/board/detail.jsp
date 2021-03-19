@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+<!-- <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+
 </head>
 <body>
 	<div class="container" role="main">
@@ -40,7 +44,7 @@
 					<button type="button"class="btn btn-secondary mb-3">수정</button>
 				</a>
 			</div>
-			<a href="/board/list?pageNum=${param.pageNum}">
+			<a href="/board/list?pageNum=${param.pageNum}&type=${param.type}&keyword=${param.keyword}">
 				<button type="button" class="btn btn-sm btn-primary" id="btnList" 
 				style="float:right;">
 					목록으로가기
@@ -48,4 +52,19 @@
 			</a>
 	</div>
 </body>
+
+<script  
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script  src="/resources/js/reply.js"></script>
+<script>
+	$(document).ready(function(){
+		console.log(replyService);
+	})
+</script>
 </html>
+
+
+
+

@@ -25,25 +25,38 @@ public class BoardMapperTest {
 //		mapper.getList().forEach(board -> log.info(board));
 //	}
 	
-	@Test
-	public void testInsert() {
-		BoardVO board = new BoardVO();
-		board.setTitle("새로작성글");
-		board.setContent("하이여");
-		board.setWriter("이순신");
-
-		log.info(board);
-	}
+//	@Test
+//	public void testInsert() {
+//		BoardVO board = new BoardVO();
+//		board.setTitle("새로작성글");
+//		board.setContent("하이여");
+//		board.setWriter("이순신");
+//
+//		log.info(board);
+//	}
+//	
+//	@Test
+//	public void testPaging() {
+//		Criteria cri = new Criteria();
+//		cri.setPageNum(3);
+//		cri.setAmount(10);
+//		
+//		List<BoardVO> list= mapper.getListWithPaging(cri);
+//		
+//		list.forEach(board -> log.info(board.getBno()));
+//	}
+	
 	
 	@Test
-	public void testPaging() {
+	public void testSearch() {
 		Criteria cri = new Criteria();
-		cri.setPageNum(3);
-		cri.setAmount(10);
+		cri.setKeyword("새로");
+		cri.setType("T");
 		
-		List<BoardVO> list= mapper.getListWithPaging(cri);
+		List<BoardVO> list = mapper.getListWithPaging(cri);
 		
-		list.forEach(board -> log.info(board.getBno()));
+		list.forEach(item -> log.info(item));
+		
 	}
 	
 	
