@@ -116,6 +116,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Owner\Desktop\2020JavaDevClass_Community-main"/>
+			<item value="C:\Users\Owner\Desktop\myLecture"/>
 			<item value="C:\Users\Owner\Desktop\myLecture\Community"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

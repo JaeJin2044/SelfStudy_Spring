@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,9 +60,24 @@
   crossorigin="anonymous"></script>
 <script  src="/resources/js/reply.js"></script>
 <script>
-	$(document).ready(function(){
-		console.log(replyService);
+
+	console.log("=====")
+	console.log("js Test");
+	
+	var bnoValue = '<c:out value="${board.bno}"/>';
+
+	/* replyService.add(
+		{reply:"JS test", replyer:"tester", bno:bnoValue},
+		function(result){
+			alert("RESTUL : "+result);
+		}
+	); */
+	replyService.getList({bno:bnoValue, page:1},function(list){
+		for(var i = 0, len = list.length || 0 ; i < len; i++){
+			console.log(list[i]);
+		}
 	})
+	
 </script>
 </html>
 

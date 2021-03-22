@@ -31,7 +31,6 @@ public class BoardController {
 		
 		int total = service.totalCount(cri);
 		
-		total = 953;
 		model.addAttribute(Const.KEY_LIST, dbData);
 		model.addAttribute("page", new PageDTO(cri,total));
 		System.out.println("amount: "+cri.getAmount());
